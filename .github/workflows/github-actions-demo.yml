@@ -15,3 +15,9 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      
+      - name: test actions secret
+        run: echo "Action secret -> ${{ secrets.ACTION_SECRET }}"
+        
+      - name: test dependabot secret
+        run: echo "Dependabot secret -> ${{ secrets.DEPENDABOT_SECRET }}"
