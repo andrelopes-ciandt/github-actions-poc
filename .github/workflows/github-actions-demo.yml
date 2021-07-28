@@ -3,6 +3,8 @@ on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+    env:
+      TEST_ENV: TEST_ENV
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -23,6 +25,6 @@ jobs:
         run: echo "Dependabot secret -> ${{ secrets.DEPENDABOT_SECRET }}"
         
       - name: Test env var
-        run: env | grep testvar
+        run: env | grep TEST
         env:
-          testvar: TEST_VAR_IS_HERE
+          TEST_LOCAL_ENV: TEST_LOCAL_ENV
