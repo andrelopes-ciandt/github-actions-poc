@@ -21,3 +21,8 @@ jobs:
         
       - name: test dependabot secret
         run: echo "Dependabot secret -> ${{ secrets.DEPENDABOT_SECRET }}"
+        
+      - name: Test env var
+        run: env | grep testvar
+        env:
+          testvar: TEST_VAR_IS_HERE
