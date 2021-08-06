@@ -29,7 +29,6 @@ jobs:
         env:
           TEST_LOCAL_ENV: TEST_LOCAL_ENV
           
-          
       - name: Shell
         run: |
           desired_default_branch="dev"
