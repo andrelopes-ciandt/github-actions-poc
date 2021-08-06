@@ -28,3 +28,21 @@ jobs:
         run: env | grep TEST
         env:
           TEST_LOCAL_ENV: TEST_LOCAL_ENV
+          
+          
+      - name: Shell
+        run: |
+          desired_default_branch="dev"
+          current_default_branch=$(git symbolic-ref --short HEAD)
+          
+          echo $desired_default_branch
+          echo $current_default_branch
+          
+          if [ $current_default_branch == $desired_default_branch ]; then
+            echo "$desired_default_branch branch already exists!"
+          else
+            echo "$desired_default_branch does not exist yet. Creating ..."
+            git checkout -b $desired_default_branch
+            git push -u origin $desired_default_branch
+            echo "$desired_default_branch created and pushed to remote!"
+          fi
