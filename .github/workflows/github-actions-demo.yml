@@ -43,8 +43,7 @@ jobs:
       - name: Test global env var
         run: echo "Global env -> ${{ env.GLOBAL_ENV }}"
         
-      - name: Test input (DRY_RUN)
-        if: ${{ env.DRY_RUN }}
+      - name: Test check branch
         run: branch=$(git branch -la | grep -w remotes/origin/dev) && echo "$branch"
         
         
