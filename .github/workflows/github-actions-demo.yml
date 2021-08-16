@@ -45,7 +45,9 @@ jobs:
         
       - name: Test input (DRY_RUN)
         if: ${{ env.DRY_RUN }}
-        run: cat non-existent-file
+        run: branch=$(git branch -la | grep -w remotes/origin/dev) && echo "$branch"
+        
+        
           
       - name: Shell
         run: |
