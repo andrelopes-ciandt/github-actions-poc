@@ -44,7 +44,7 @@ jobs:
         run: echo "Global env -> ${{ env.GLOBAL_ENV }}"
         
       - name: Test check branch
-        run: branch=$(git branch -la | grep -w remotes/origin/dev) && echo "$branch"
+        run: branch=$(git ls-remote | grep -w refs/heads/dev) && echo "$branch"
         
         
           
