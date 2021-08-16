@@ -1,5 +1,12 @@
 name: GitHub Actions Demo
-on: [push]
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: 'dry-run mode? (true or false)'
+        required: false
+        default: 'true'
 
 env:
   GLOBAL_ENV: global_env
@@ -35,6 +42,10 @@ jobs:
           
       - name: Test global env var
         run: echo "Global env -> ${{ env.GLOBAL_ENV }}"
+        
+      - name: Test input (DRY_RUN)
+        if: ${{ env.DRY_RUN }}
+        run: cat non-existent-file
           
       - name: Shell
         run: |
