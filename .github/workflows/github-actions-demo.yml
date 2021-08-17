@@ -18,7 +18,7 @@ jobs:
       TEST_ENV: TEST_ENV
     steps:
       - name: Run only from main
-        if: ${{ github.ref }} != 'refs/heads/main' 
+        if: ${{ github.ref != 'refs/heads/main' }}
         run: echo "This workflow should be run by main branch only. Please check readme. Current branch is ${{ github.ref }}" && exit 1
   
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
