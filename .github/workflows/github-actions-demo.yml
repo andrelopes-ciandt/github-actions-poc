@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Run only from main
         #if: ${{ '' == '' }} 
-        run: echo "${{ github.event }}"
+        run: echo "${{ github.ref }}"
   
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
