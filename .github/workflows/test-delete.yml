@@ -1,4 +1,4 @@
-name: Test on delete
+name: Test on delete (WIP)
 
 on: [delete]
 
