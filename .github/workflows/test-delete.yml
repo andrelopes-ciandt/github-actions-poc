@@ -1,0 +1,10 @@
+name: Test on delete
+
+on: [delete]
+
+jobs:
+  explore-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print branch
+        run: echo "Ref branch is ${{ github.ref }}"
