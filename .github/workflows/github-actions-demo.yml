@@ -55,7 +55,7 @@ jobs:
           TEST_LOCAL_ENV: TEST_LOCAL_ENV
           
       - name: Test global env var
-        run: echo "Global env -> ${{ (env.GLOBAL_ENV == 'global_env' || env.GLOBAL_ENV == 'global_env_test') && 'true' || 'false' }}"
+        run: echo "Global env -> ${{ (env.GLOBAL_ENV == 'global_env' || GLOBAL_ENV == 'global_env_test') && 'true' || 'false' }}"
         
       - name: Test check branch
         run: branch=$(git ls-remote | grep -w refs/heads/dev) && echo "$branch"
