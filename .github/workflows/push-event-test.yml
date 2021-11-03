@@ -38,8 +38,9 @@ jobs:
         shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_CONTEXT: ${{ toJson(github) }}
           BEFORE: ${{ github.event.push.before }}
         run: |
+          echo "$GITHUB_CONTEXT"
           echo $BEFORE
-
-
+          
