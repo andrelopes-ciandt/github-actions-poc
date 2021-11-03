@@ -22,3 +22,13 @@ jobs:
           echo "$GITHUB_CONTEXT"
           echo $BEFORE
           
+      - name: New diff 2
+        shell: bash
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.event.after }}
+        run: |
+          echo $AFTER
+          echo $BEFORE
+          echo "Comparing diff between $AFTER and $BEFORE"
+          git --no-pager diff --name-only $AFTER $BEFORE
