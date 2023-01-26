@@ -1,7 +1,7 @@
-on:
-  - workflow_dispatch
-
 name: Test paths
+
+on:
+  workflow_dispatch
 
 jobs:
   test-paths:
