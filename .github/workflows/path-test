@@ -16,3 +16,8 @@ jobs:
         shell: bash
         run: |
           pwd && cd .github && pwd
+          
+      - name: Log 2
+        shell: bash
+        run: |
+          pwd
